@@ -1,19 +1,33 @@
 import React from "react";
+import styled from "styled-components";
 
-export function NavBar() {
+export function Nav() {
+
+    const NavBar = styled.nav`
+        position: absolute;
+        top: 8%;
+        background-color: rgb(189 189 189 / 58%);
+        padding: 4%;
+        texte-align: center;
+        border: solid black 1px;
+        border-radius: 2%;
+
+        .Nav-border {
+            margin-bottom: 10%;
+            border-bottom: solid black 1px; 
+        }
+
+        .Nav-link {
+            margin: 5%;
+        }
+    `
     return(
-        <nav className="NavBar">
+        <NavBar>
             <ul>
-                <li className="NavLink">
-                    <a >Início</a>
-                </li>
-                <li className="NavLink">
-                    <a >Adicionar CEP</a>
-                </li>
-                <li className="NavLink">
-                    <a >Produtos</a>
-                </li>
+                <li className="Nav-border Nav-link">Início</li>
+                <li className="Nav-border Nav-link">Categorias</li>
+                <li className="Nav-link">Produtos</li>
             </ul>
-        </nav>
+        </NavBar>
     )
 }

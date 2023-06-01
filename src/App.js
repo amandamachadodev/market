@@ -4,9 +4,9 @@ import './App.css';
 
 function App() {
   return (
-    <Switch>
-    <Route path="/" component={Home} exact />
-    </Switch>
+      <Switch>
+       <Route path="/" component={Home} exact />
+      </Switch>
   );
 }
 

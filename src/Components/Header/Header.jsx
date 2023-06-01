@@ -1,8 +1,8 @@
 import React from "react";
-// import "../Header/Header.css";
 import { AiOutlineMenu, AiOutlineUser } from 'react-icons/ai';
 import { useState } from "react";
 import styled from 'styled-components';
+import { Nav } from "../NavBar/Nav";
 
 export function Header() {
 
@@ -13,8 +13,8 @@ export function Header() {
         top: 0;
         left: 0;
         width: 100%;
-        height: 9%;
-        background-color: #fff159;
+        height: 8%;
+        background-color: black;
 
         .Header-icon {
             margin-top: 1%;
@@ -22,8 +22,8 @@ export function Header() {
         }
 
         p {
-            margin-top: 7%;
-            color: rgb(0, 153, 255);
+            margin-top: 6%;
+            color: white;
         }
     `
 
@@ -35,10 +35,13 @@ export function Header() {
     }
 
     return(
-        <TagHeader className="Header">
-            <AiOutlineMenu className="Header-icon" size={25} onClick={handleClick}/>
-            <p className="Header-title">Mercado</p>
-            <AiOutlineUser className="Header-icon" size={25}/>
-        </TagHeader>
+        <>
+            <TagHeader className="Header" >
+                <AiOutlineMenu className="Header-icon" size={25} color="white" onClick={handleClick}/>
+                <p className="Header-title">Mercado</p>
+                <AiOutlineUser className="Header-icon" size={25}  color="white" />
+            </TagHeader>
+            {menuShow && <Nav />}
+        </>
     )
 }
