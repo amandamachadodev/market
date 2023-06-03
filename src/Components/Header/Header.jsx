@@ -31,7 +31,6 @@ export function Header() {
 
     function handleClick() {
         menuShow ? setMenuShow(false) : setMenuShow(true);
-        console.log(menuShow);
     }
 
     return(

@@ -29,7 +29,6 @@ export function Products() {
     useEffect( () => {
         getProducts();
         setProducts(data);
-        console.log(data);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -49,11 +48,6 @@ export function Products() {
                         price={item.price}
                         image={item.thumbnail}
                     />
-                    // <Card key={item.id}>
-                    //     <img src={item.thumbnail} alt={item.title}/>
-                    //     <p className="Title">{item.title.substr(0, 35)}...</p>
-                    //     <p>R$ {item.price.toFixed(2)}</p>
-                    // </Card>
                 )
             })}
         </ProductsCards>
