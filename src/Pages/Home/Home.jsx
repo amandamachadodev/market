@@ -1,15 +1,16 @@
 import React from "react";
 import { Header } from "../../Components/Header/Header";
-import { CardProducts } from "../../Components/CardProducts/CardProducts";
+import { Products } from "../../Components/CardProducts/Products";
 import styled from "styled-components";
 
+const PageHome = styled.div`
+`
+
 function Home() {
-    const PageHome = styled.div`
-    `
     return(
         <PageHome>
             <Header />
-            <CardProducts/>
+            <Products/>
         </PageHome>
     );
 }

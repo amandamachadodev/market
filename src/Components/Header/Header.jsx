@@ -3,17 +3,16 @@ import { AiOutlineMenu, AiOutlineUser } from 'react-icons/ai';
 import { useState } from "react";
 import styled from 'styled-components';
 import { Nav } from "../NavBar/Nav";
+import { InputSearch } from "../InputSearch/InputSearch";
 
-export function Header() {
-
-    const TagHeader = styled.header`
+const TagHeader = styled.header`
         display: flex;
         justify-content: space-between;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 8%;
+        height: 12%;
         background-color: black;
 
         .Header-icon {
@@ -27,6 +26,7 @@ export function Header() {
         }
     `
 
+export function Header() {
     const [menuShow, setMenuShow] = useState(false);
 
     function handleClick() {
@@ -41,6 +41,7 @@ export function Header() {
                 <p className="Header-title">Mercado</p>
                 <AiOutlineUser className="Header-icon" size={25}  color="white" />
             </TagHeader>
+            <InputSearch/>
             {menuShow && <Nav />}
         </>
     )

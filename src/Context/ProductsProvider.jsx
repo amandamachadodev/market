@@ -5,15 +5,30 @@ import { fetchProducts } from '../service/api';
 
 function ProductsProvider({ children }) {
   const [data, setProducts] = useState([]);
+  const [inputSearch, setInputSearch] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  async function getProductsFiltered(inputSearch) {
+    setLoading(true);
+    const products = await fetchProducts(inputSearch);
+    setProducts(products.results);
+    setLoading(false);
+  }
 
   async function getProducts() {
-    const products = await fetchProducts('computador');
+    setLoading(true);
+    const products = await fetchProducts();
     setProducts(products.results);
+    setLoading(false);
   }
 
   const contextValue = {
     data,
     getProducts,
+    getProductsFiltered,
+    inputSearch,
+    setInputSearch,
+    loading
   };
 
   return (
