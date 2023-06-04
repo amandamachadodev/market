@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineMenu, AiOutlineUser } from 'react-icons/ai';
+import { AiOutlineMenu, AiOutlineShoppingCart } from 'react-icons/ai';
 import { useState } from "react";
 import styled from 'styled-components';
 import { Nav } from "../NavBar/Nav";
@@ -38,7 +38,7 @@ export function Header() {
             <TagHeader className="Header" >
                 <AiOutlineMenu className="Header-icon" size={25} color="white" onClick={handleClick}/>
                 <p className="Header-title">Mercado</p>
-                <AiOutlineUser className="Header-icon" size={25}  color="white" />
+                <AiOutlineShoppingCart className="Header-icon" size={25}  color="white" />
             </TagHeader>
             <InputSearch/>
             {menuShow && <Nav />}
