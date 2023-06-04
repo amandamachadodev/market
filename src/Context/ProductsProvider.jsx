@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ProductsContext from './ProductsContext';
-import { fetchProducts } from '../service/api';
+import { fetchProducts } from '../service/fetchProducts';
+import { fetchItem } from '../service/fetchItem';
 
 function ProductsProvider({ children }) {
   const [data, setProducts] = useState([]);
   const [inputSearch, setInputSearch] = useState('');
   const [loading, setLoading] = useState(false);
+  const [productDetail, setProductDetail] = useState([]);
 
   async function getProductsFiltered(inputSearch) {
     setLoading(true);
@@ -22,13 +24,24 @@ function ProductsProvider({ children }) {
     setLoading(false);
   }
 
+  async function getItem(id) {
+    setLoading(true);
+    const product = await fetchItem(id);
+    setProductDetail(product);
+    setLoading(false);
+  }
+
   const contextValue = {
     data,
     getProducts,
     getProductsFiltered,
     inputSearch,
     setInputSearch,
-    loading
+    loading,
+    setLoading,
+    productDetail,
+    setProductDetail,
+    getItem
   };
 
   return (
